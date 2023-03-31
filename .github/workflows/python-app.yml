@@ -47,4 +47,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ghcr.io/lugopi/industrialisation-logiciel-tp2:latest
     - name: Push the image into the registry
-      run: sudo docker push ghcr.io/lugopi/industrialisation-logiciel-tp2:latest
+      run: docker push ghcr.io/lugopi/industrialisation-logiciel-tp2:latest
