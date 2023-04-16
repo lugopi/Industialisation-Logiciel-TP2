@@ -1,7 +1,8 @@
 FROM python:3.9
-USER docker
 
 RUN useradd -ms /bin/bash  docker
+
+USER docker
 
 WORKDIR /code
 
