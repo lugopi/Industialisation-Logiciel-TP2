@@ -29,15 +29,33 @@ La première étape contient le mot-clé ‘with’, a quoi sert-il  ?
 
 Sur l’onglet Summary d’une analyse de code, SonarCloud fournit 4 indicateurs. Quels sont-ils et quelles sont leurs utilités ?
 
+> - Reliability : sert à trouver les erreurs de codage qui casse le code.
+> - Maintainability : sert à trouver le code difficilement maintenable (code smells)
+> - Security : sert à trouver le code qui peut contenir des failles de sécurités.
+> - Security Review : sert à trouver le code critique qui nécessite une revue manuelle.
+
 À quoi sert l’indicateur Quality Gate ?
+
+> Il nous aide à savoir si le projet est prêt pour la production et si il y a un problème, nous indique ou chercher.
 
 ### b)
 
 Quelle est la différence entre les sections New code et Overall Code dans l’onglet Summary ?
 
+> La section `New code` n'affiche l'analyse du code ajouter au dernier commit. Alors que `Overall` affiche l'état global du code.
+
 Y a-t-il des Code Smells ? Si oui, combien et pour quelle(s) raisons(s) ?
 
+> il y en a `3`, les causes sont : 2x un paramètre pas utilisé, 1x 2 méthodes qui sont identique.
+
 Y a-t-il des Security Hotspots ? Si oui, combien et pour quelle(s) raison(s) ?
+
+> Il y en a `1`, l'image docker fonctionne avec l'utilisateur `root`
+
+### c)
+> Correction des `Security Hotspots` en ajoutant un utilisateur dans dockerfile qui lance l'application.
+
+> Correction des `Code smells` : supprimer `deferred` de `spend_cash` et de `spend_money`. Et marquer `spend_money` comme étant depressier et en la redirigeant sur `spend_cash` comme c'est les memes méthodes.
 
 ## Exercice 3: Gitlab CI/CD
 
