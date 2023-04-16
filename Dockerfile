@@ -1,8 +1,6 @@
 FROM python:3.9
 
-RUN useradd -ms /bin/bash  docker
-
-USER docker
+RUN useradd --system --group --no-create-home docker
 
 WORKDIR /code
 
@@ -17,5 +15,7 @@ COPY ./src /code/src
 RUN pip install /code
 
 COPY ./controller /code/controller
+
+USER docker
 
 CMD ["uvicorn", "controller.controller:app", "--host", "0.0.0.0", "--port", "80"]
