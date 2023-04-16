@@ -1,6 +1,6 @@
 FROM python:3.9
 
-RUN useradd --system --group --no-create-home docker
+RUN useradd -ms /bin/bash docker
 
 WORKDIR /code
 
